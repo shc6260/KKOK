@@ -4,14 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KKOK"
+        xmlns:views="clr-namespace:KKOK.Views.MainViews"
+        xmlns:main="clr-namespace:KKOK.ViewModels.MainViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.DataContext>
+        <main:MainViewModel/>
+    </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="88*"/>
+            <ColumnDefinition Width="353*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="353*"/>
         </Grid.ColumnDefinitions>
-        
+        <views:MainListView    DataContext="{Binding MainListViewModel}" Margin="0,5,0,5"/>
+        <views:MainLeftView Margin="5,5,0,5" BorderBrush="Black" BorderThickness="1" Grid.Column="1" DataContext="{Binding MainLeftViewModel}"/>
+        <GridSplitter Grid.Column="2"
+                      VerticalAlignment="Stretch"
+                      HorizontalAlignment="Center"
+                      Background="LightGray"
+                      ShowsPreview="True"
+                      Width="5"
+                      Margin="0,5,0,5"
+               />
+        <views:MainRightView Margin="0,5,5,5" BorderBrush="Black" BorderThickness="1" Grid.Column="3" DataContext="{Binding MainRightViewModel}" />
     </Grid>
 </Window>

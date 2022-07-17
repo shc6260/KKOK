@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace WoongWpfStudyProject.Views.ExampleViews
+namespace KKOK.Views.MainViews
 {
     /// <summary>
-    /// MainMenuView.xaml에 대한 상호 작용 논리
+    /// MainListView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class MainMenuView : UserControl
+    public partial class MainListView : UserControl
     {
-        public MainMenuView()
+        public MainListView()
         {
             InitializeComponent();
         }

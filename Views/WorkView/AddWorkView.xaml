@@ -1,0 +1,54 @@
+﻿<Window x:Class="KKOK.Views.WorkView.AddWorkView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KKOK.ViewModels"
+        
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Window.DataContext>
+        <local:AddWorkViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBox Text="{Binding WorkTitle}"  Style="{StaticResource WaterMarkTextBox}" Tag="업무내용"/>
+        <Grid Grid.Row="1">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="310*"/>
+                    <ColumnDefinition Width="90*"/>
+                    <ColumnDefinition Width="107*"/>
+                    <ColumnDefinition Width="293*"/>
+                </Grid.ColumnDefinitions>
+                <TextBox Text="{Binding DetailWorkData}" TextWrapping="Wrap" AcceptsReturn="True" Style="{StaticResource WaterMarkTextBox}" Tag="상세 업무 내용" Grid.ColumnSpan="2"/>
+                <Grid Grid.Column="2" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <TextBox Text="{Binding SecheduleData}" Style="{StaticResource WaterMarkTextBox}" Tag="일정내용" Margin="10"/>
+                    <TextBox Grid.Row="1" Text="{Binding Manager}" Style="{StaticResource WaterMarkTextBox}" Tag="담당자"/>
+                    <ComboBox Grid.Row="2" Text="{Binding State}" Margin="10">
+                        <ComboBoxItem Content="열림"/>
+                        <ComboBoxItem Content="진행"/>
+                        <ComboBoxItem Content="완료"/>
+                        <ComboBoxItem Content="재진행"/>
+                        <ComboBoxItem Content="닫힘"/>
+                    </ComboBox>
+
+                    <DatePicker Grid.Row="3" Margin="10" SelectedDate="{Binding EndDate}" />
+                    <TextBox Grid.Row="4" Text="{Binding WorkType}" Style="{StaticResource WaterMarkTextBox}" Tag="업무 종류"/>
+                    <Button Grid.Row="5" Content="추가" Margin="10" Command="{Binding BtnAddCmd}" VerticalAlignment="Bottom"/>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

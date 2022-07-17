@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KKOK.ViewModels.ViewModelBase
+
+namespace KKOK.ViewModels.Main
 {
     internal class ViewModelBase : INotifyPropertyChanged
     {
@@ -41,5 +42,6 @@ namespace KKOK.ViewModels.ViewModelBase
             if (PropertyChanged != null)
                 PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+
     }
 }

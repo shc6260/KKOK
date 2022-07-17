@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KKOK.ViewModels.ViewModelBase;
 
-namespace WoongWpfStudyProject.ViewModels
+namespace KKOK.Types
 {
-    internal class MainMenuViewModel : ViewModelBase
+    public enum FunctionsType
     {
+        home,
+        work,
+        chart,
+        cheat,
+        team
     }
 }
