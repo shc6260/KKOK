@@ -1,8 +1,11 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using KKOK.Models;
+using KKOK.Models.WorkModel;
 using KKOK.ViewModels.Main;
+using Prism.Commands;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -14,44 +17,53 @@ namespace KKOK.ViewModels
 {
     internal class AddWorkViewModel : ViewModelBase
     {
-        
-        
+        #region Constructor
+        public AddWorkViewModel()
+        {
+            ButtonAddCommand = new DelegateCommand(ButtonAddPush);
+        } 
+        #endregion
+
         #region properties
         private string workTitle;
         public string WorkTitle
         {
             get { return workTitle; }
-            set { workTitle = value; }
+            set { workTitle = value;
+                OnPropertyChanged(WorkTitle);
+            }
         }
         private string detailWorkData;
         public string DetailWorkData
         {
             get { return detailWorkData; }
-            set { detailWorkData = value; }
+            set { detailWorkData = value;
+                OnPropertyChanged(DetailWorkData);
+            }
         }
         private string secheduleData;
         public string SecheduleData
         {
             get { return secheduleData; }
-            set { secheduleData = value; }
+            set { secheduleData = value;
+                OnPropertyChanged(SecheduleData);
+            }
         }
         private string manager;
         public string Manager
         {
             get { return manager; }
-            set { manager = value; }
+            set { manager = value;
+                OnPropertyChanged(Manager);
+            }
         }
-        private string state;
-        public string State
-        {
-            get { return state; }
-            set { state = value; }
-        }
+
         private DateTime endDate = DateTime.Now;
         public DateTime EndDate
         {
             get { return endDate; }
-            set { endDate = value; }
+            set { endDate = value;
+            }
         }
 
         private string workType;
@@ -59,29 +71,27 @@ namespace KKOK.ViewModels
         public string WorkType
         {
             get { return workType; }
-            set { workType = value; }
+            set { workType = value;
+                OnPropertyChanged(WorkType);
+            }
         }
 
-        private ICommand btnAddCmd;
-
-        public ICommand BtnAddCmd => btnAddCmd = btnAddCmd ?? new RelayCommand(ButtonAddCmd, ButtonCanCmd);
         #endregion
 
+
+        public DelegateCommand ButtonAddCommand { get; set; }
+
+
         #region ButtonEvent
-        private void ButtonAddCmd()
+        private void ButtonAddPush()
         {
             MessageBox.Show(WorkTitle);
             MessageBox.Show(DetailWorkData);
             MessageBox.Show(SecheduleData);
             MessageBox.Show(Manager);
-            MessageBox.Show(State);
             MessageBox.Show(EndDate.ToString("yyyy/MM/dd"));
             MessageBox.Show(WorkType);
         }
-        private bool ButtonCanCmd()
-        {
-            return true;
-        } 
         #endregion
     }
 }

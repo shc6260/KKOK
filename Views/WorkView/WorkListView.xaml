@@ -17,36 +17,40 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <TextBox Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource WaterMarkTextBox}" Tag="담당자" Margin="0,0,50,0"/>
-        <Button Grid.Column="1" Style="{StaticResource BtnStyle1}" HorizontalAlignment="Right" Content="조회"/>
-        <DataGrid RowHeaderWidth="0" Margin="5" BorderThickness="1" BorderBrush="Black" Background="White" SelectedItem="{Binding SelectedType}" IsReadOnly="True" ItemsSource="{Binding Items}" AutoGenerateColumns="False" CanUserSortColumns="False" Grid.Row="1">
+        <Button Grid.Column="1" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Right" Content="조회"/>
+        <DataGrid RowHeaderWidth="0" Margin="5" BorderThickness="1" BorderBrush="Black" Background="White"
+                  SelectedItem="{Binding SelectedItem}" IsReadOnly="True" 
+ItemsSource="{Binding Item}" AutoGenerateColumns="False" CanUserSortColumns="False" Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="Auto" CanUserResize="False"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle2}"
                     Binding="{Binding No}"
                                     ElementStyle="{StaticResource DataGridItemStyle}"
-                    Header="번호"
+                    Header="{StaticResource NoString}"
                     />
                 <DataGridTextColumn Width="3*" CanUserResize="False"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle2}"
                                     ElementStyle="{StaticResource DataGridItemStyle}"
                     Binding="{Binding WorkTitle}"
-                    Header="업무내용"
+                    Header="{StaticResource WorkTitleString}"
                     />
                 <DataGridTextColumn Width="Auto" CanUserResize="False"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle2}"
                                     ElementStyle="{StaticResource DataGridItemStyle}"
                     Binding="{Binding Manager}"
-                    Header="담당자"
+                    Header="{StaticResource ManagerString}"
                     />
-                <DataGridTemplateColumn HeaderStyle="{StaticResource DataGridHeaderStyle2}" Header="상태">
+                <DataGridTemplateColumn HeaderStyle="{StaticResource DataGridHeaderStyle2}" Header="{StaticResource StateString}">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <Button Style="{StaticResource ItemBtnStyle}"  Command="{Binding Path=DataContext.(vm:WorkListViewModel.BtnStateShow), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type DataGrid}}}" Content="{Binding State}"/>
+                            <Button Style="{StaticResource ItemButtonStyle}" 
+                                    Command="{Binding Path=DataContext.(vm:WorkListViewModel.ButtonStatePopup), RelativeSource={RelativeSource Mode=FindAncestor, 
+                                AncestorType={x:Type DataGrid}}}" Content="{Binding State}"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button  Content="업무 추가" Command="{Binding BtnAddWorkShow}" Grid.Row="2" Style="{StaticResource BtnStyle1}" HorizontalAlignment="Right"/>
+        <Button  Content="{StaticResource AddString}" Command="{Binding ButtonAddPopup}" Grid.Row="2" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Right"/>
     </Grid>
 </UserControl>

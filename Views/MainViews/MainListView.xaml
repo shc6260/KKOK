@@ -8,7 +8,7 @@
              d:DesignHeight="450" d:DesignWidth="800">
 
     <Grid>
-        <DataGrid BorderThickness="0" Background="White" RowHeaderWidth="0" CanUserSortColumns="False" SelectedItem="{Binding SelectedType}" ItemsSource="{Binding Items}" AutoGenerateColumns="False" >
+        <DataGrid IsReadOnly="True" BorderThickness="0" Background="White" RowHeaderWidth="0" CanUserSortColumns="False" SelectedItem="{Binding SelectedType}" ItemsSource="{Binding Items}" AutoGenerateColumns="False" >
             <DataGrid.Columns>
                 <DataGridTextColumn CanUserResize="False" HeaderStyle="{StaticResource DataGridHeaderStyle1}" Width="*" 
                                      Header="메뉴" Binding="{Binding Name}"

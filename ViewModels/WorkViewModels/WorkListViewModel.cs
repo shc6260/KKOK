@@ -1,7 +1,9 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using KKOK.Models.WorkModel;
 using KKOK.ViewModels.Main;
+using KKOK.ViewModels.WorkViewModels;
 using KKOK.Views.WorkView;
+using Prism.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -15,41 +17,69 @@ namespace KKOK.ViewModels
 {
     internal class WorkListViewModel : ViewModelBase
     {
-        #region properties
-        private ObservableCollection<WorkListModel> items;
+        public WorkListViewModel()
+        {
+            Popup popup = new Popup();
+            ButtonAddPopup = new DelegateCommand(popup.ButtonAddWorkShow);
+            ButtonStatePopup = new DelegateCommand(popup.ButtonStateShow);
+        }
+   /*     public WorkListViewModel(ViewModelBase parent):base(parent)
+        {
 
-        public ObservableCollection<WorkListModel> Items
+        }*/
+        #region properties
+        /*private ObservableCollection<WorkListModel> inneritems
+        { get; } = new ObservableCollection<WorkListModel>();
+
+        private ReadOnlyObservableCollection<WorkListModel> items;
+        public ReadOnlyObservableCollection<WorkListModel> Items
         {
             get
             {
-                if(items == null)
+                if(items == null) 
                 {
-                    items = new ObservableCollection<WorkListModel>();
-                    items.Add(new WorkListModel() { No = 1, WorkTitle = "test1",Manager="이선웅", State = "열림" });
-                    items.Add(new WorkListModel() { No = 2, WorkTitle = "test2", Manager = "이선웅", State = "닫힘" });
+                    items = new ReadOnlyObservableCollection<WorkListModel>(inneritems);
+                    inneritems.Add();
                 }
                 return items;
             }
+        }*/
+
+        private ObservableCollection<WorkListModel> item;
+
+        public ObservableCollection<WorkListModel> Item
+        {
+            get
+            {
+                if (item == null)
+                {
+                    item = new ObservableCollection<WorkListModel>();
+                    item.Add(new WorkListModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열림" });
+                    item.Add(new WorkListModel() { No = 2, WorkTitle = "test2", Manager = "이선웅", State = "닫힘" });
+                }
+                return item;
+            }
         }
 
-        private ICommand btnAddWorkShow;
-        private ICommand btnStateShow;
-
-        public ICommand BtnAddWorkShow => btnAddWorkShow = btnAddWorkShow ?? new RelayCommand(ButtonAddWorkShow, CanBtn);
-        public ICommand BtnStateShow => btnStateShow = btnStateShow ?? new RelayCommand(ButtonStateShow, CanBtn);
+        #region DelegateCommands
+        public DelegateCommand ButtonAddPopup { get; set; }
+        public DelegateCommand ButtonStatePopup { get; set; } 
         #endregion
 
-        private WorkListModel _selectedType;
 
-        public WorkListModel SelectedType
+        #endregion
+
+        private WorkListModel _selectedItem;
+
+        public WorkListModel SelectedItem
         {
-            get => _selectedType;
+            get => _selectedItem;
             set
             {
-                if(SetProperty(ref _selectedType, value))
+                if(SetProperty(ref _selectedItem, value))
                 {
                     OnChangedSelectedType();
-                    MessageBox.Show(SelectedType.State + " " + SelectedType.WorkTitle + " " + SelectedType.Manager);
+                    MessageBox.Show(SelectedItem.State + " " + SelectedItem.WorkTitle + " " + SelectedItem.Manager);
                 }
             }
         }
@@ -60,29 +90,5 @@ namespace KKOK.ViewModels
             ChangedSelectedType?.Invoke(this, EventArgs.Empty);
         }
 
-
-        #region ButtonEvent
-        private void ButtonAddWorkShow()
-        {
-            AddWorkView add = new AddWorkView();
-            var viewModel = new AddWorkViewModel();
-            add.DataContext = viewModel;
-            add.Show();
-        }
-
-        private void ButtonStateShow()
-        {
-            StateChangeView stateChangeView = new StateChangeView();
-             var viewModel = new StateChangeViewModel();
-             stateChangeView.DataContext = viewModel;
-             viewModel.WorkType = SelectedType.WorkTitle;
-             stateChangeView.Show();
-        }
-
-        private bool CanBtn()
-        {
-            return true;
-        } 
-        #endregion
     }
 }

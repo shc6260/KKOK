@@ -24,11 +24,11 @@ namespace KKOK.Managers
 
             var items = new List<FunctionListitemData>();
 
-            items.Add(new FunctionListitemData(FunctionsType.home, "홈"));
-            items.Add(new FunctionListitemData(FunctionsType.chart, "상황도"));
-            items.Add(new FunctionListitemData(FunctionsType.work, "개인업무"));
-            items.Add(new FunctionListitemData(FunctionsType.cheat, "채팅채널"));
-            items.Add(new FunctionListitemData(FunctionsType.team, "팀"));
+            items.Add(new FunctionListitemData(FunctionsType.Home, "홈"));
+            items.Add(new FunctionListitemData(FunctionsType.Chart, "상황도"));
+            items.Add(new FunctionListitemData(FunctionsType.Work, "개인업무"));
+            items.Add(new FunctionListitemData(FunctionsType.Chat, "채팅채널"));
+            items.Add(new FunctionListitemData(FunctionsType.Team, "팀"));
 
             return items;
         }

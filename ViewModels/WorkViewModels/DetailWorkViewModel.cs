@@ -1,7 +1,9 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using KKOK.Models.WorkModel;
 using KKOK.ViewModels.Main;
+using KKOK.ViewModels.WorkViewModels;
 using KKOK.Views.WorkView;
+using Prism.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,21 +15,13 @@ namespace KKOK.ViewModels
 {
     internal class DetailWorkViewModel : ViewModelBase
     {
-        private ICommand btnStateShow;
-
-        public ICommand BtnStateShow => btnStateShow = btnStateShow ?? new RelayCommand(ButtonStateShow, CanBtn);
-
-        private void ButtonStateShow()
+        public DetailWorkViewModel()
         {
-            StateChangeView stateChangeView = new StateChangeView();
-            var viewModel = new StateChangeViewModel();
-            stateChangeView.DataContext = viewModel;
-            stateChangeView.Show();
+            Popup popup = new Popup();
+            ButtonStatePopup = new DelegateCommand(popup.ButtonStateShow);
         }
 
-        private bool CanBtn()
-        {
-            return true;
-        }
+        public DelegateCommand ButtonStatePopup { get; set; }
+
     }
 }

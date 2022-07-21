@@ -18,4 +18,5 @@ namespace KKOK.Models.WorkModel
         public string Comment { get; set; }
         public string SecheduleData { get; set; }
     }
+    
 }

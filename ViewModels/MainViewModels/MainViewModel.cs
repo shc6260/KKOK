@@ -77,20 +77,20 @@ namespace KKOK.ViewModels.MainViewModels
         {
             switch (_mainListViewModel.SelectedType.Type)
             {
-                /*case FunctionsType.home:
+                /*case FunctionsType.Home:
                     MainLeftViewModel.LeftContent = new HomeViewModel();
                     break;*/
-                /*case FunctionsType.chart:
+                /*case FunctionsType.Chart:
                     MainLeftViewModel.LeftContent = new ChartViewModel();
                     break;*/
-                case FunctionsType.work:
+                case FunctionsType.Work:
                     MainLeftViewModel.LeftContent = new WorkListViewModel();
                     MainRightViewModel.RightContent = new DetailWorkViewModel();
                     break;
-                /*case FunctionsType.cheat:
+                /*case FunctionsType.Chat:
                     MainLeftViewModel.LeftContent = new CheatListViewModel();
                     break;*/
-                case FunctionsType.team:
+                case FunctionsType.Team:
                     MainLeftViewModel.LeftContent = new MemberViewModel();
                     MainRightViewModel.RightContent = null;
                     break;

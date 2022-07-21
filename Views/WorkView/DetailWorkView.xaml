@@ -25,8 +25,8 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBox Text="업무 내용" Style="{StaticResource DetailWorkTextBoxStyle}" />
-                <TextBox Grid.Row="1" Style="{StaticResource DetailWorkTextBoxStyle}"  Text="업무 상세 내용"/>
+                <TextBox Text="{StaticResource WorkTitleString}" Style="{StaticResource DetailWorkTextBoxStyle}" />
+                <TextBox Grid.Row="1" Style="{StaticResource DetailWorkTextBoxStyle}"  Text="{StaticResource DetailWorkString}"/>
             </Grid>
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
@@ -40,15 +40,17 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"   Text="번호" Grid.ColumnSpan="2" />
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"  Grid.Row="1" Text="일정내용" Grid.ColumnSpan="2" />
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"  Grid.Row="2" Text="담당자" Grid.ColumnSpan="2" />
-                <Button Style="{StaticResource BtnStyle1}" Grid.Row="3" Content="상태" Command="{Binding BtnStateShow}" Grid.ColumnSpan="2" />
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="4" Text="완료일" Grid.ColumnSpan="2"/>
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="5" Text="종류" Grid.ColumnSpan="2" />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"   Text="{StaticResource NoString}" Grid.ColumnSpan="2" />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"  Grid.Row="1" Text="{StaticResource ScheduleString}" Grid.ColumnSpan="2" />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"  Grid.Row="2" Text="{StaticResource ManagerString}" Grid.ColumnSpan="2" />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="3" Text="{StaticResource StateString}" Grid.ColumnSpan="2" />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="4" Text="{StaticResource EndDateString}" Grid.ColumnSpan="2"/>
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="5" Text="{StaticResource TypeString}" Grid.ColumnSpan="2" />
+                <Button Style="{StaticResource ButtonStyle1}" Grid.Row="6" Content="{StaticResource EditString}" Command="{Binding ButtonStatePopup}" Grid.ColumnSpan="2" />
             </Grid>
         </Grid>
-        <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="1" Text="업무코멘트" />
+        <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="1" Text="{StaticResource CommentString}" />
     </Grid>
 </UserControl>

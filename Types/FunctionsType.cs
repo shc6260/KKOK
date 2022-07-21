@@ -8,10 +8,10 @@ namespace KKOK.Types
 {
     public enum FunctionsType
     {
-        home,
-        work,
-        chart,
-        cheat,
-        team
+        Home,
+        Work,
+        Chart,
+        Chat,
+        Team
     }
 }

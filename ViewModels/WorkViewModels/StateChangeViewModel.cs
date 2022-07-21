@@ -1,8 +1,11 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using KKOK.Models.WorkModel;
 using KKOK.ViewModels.Main;
+using KKOK.Views.WorkView;
+using Prism.Commands;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,7 +16,16 @@ namespace KKOK.ViewModels
 {
     internal class StateChangeViewModel : ViewModelBase
     {
-        WorkListModel list = new WorkListModel();
+        public StateChangeViewModel()
+        {
+            StateItem = new ObservableCollection<string>();
+            StateItem.Add("열기");
+            StateItem.Add("진행");
+            StateItem.Add("완료");
+            StateItem.Add("재진행");
+            StateItem.Add("닫힘");
+            ButtonSave = new DelegateCommand(ButtonSaveCommand);
+        }
 
         #region properties
         private string detailWorkData;
@@ -28,7 +40,9 @@ namespace KKOK.ViewModels
         public string Manager
         {
             get { return manager; }
-            set { manager = value; }
+            set { manager = value;
+                OnPropertyChanged(Manager);
+            }
         }
         private string state;
         public string State
@@ -43,25 +57,38 @@ namespace KKOK.ViewModels
         public string WorkType
         {
             get { return workType; }
-            set { workType = value; }
+            set { workType = value;
+                OnPropertyChanged(WorkType);
+            }
         }
 
-        private ICommand btnSaveCmd;
 
-        public ICommand BtnSaveCmd => btnSaveCmd = btnSaveCmd ?? new RelayCommand(ButtonSaveCmd, ButtonCanCmd);
+        public DelegateCommand ButtonSave { get; set; }
+
+        private ObservableCollection<string> stateItem;
+
+        public ObservableCollection<string> StateItem
+        {
+            get { return stateItem; }
+            set { stateItem = value;
+                
+            }
+        }
+
+        private string selectedState;
+        public string SelectedState
+        {
+            get { return selectedState; }
+            set { selectedState = value;
+                OnPropertyChanged(SelectedState);
+            }
+        }
         #endregion
 
         #region ButtonEvent
-        private void ButtonSaveCmd()
+        private void ButtonSaveCommand()
         {
-            MessageBox.Show(DetailWorkData);
-            MessageBox.Show(Manager);
-            MessageBox.Show(State);
-            MessageBox.Show(WorkType);
-        }
-        private bool ButtonCanCmd()
-        {
-            return true;
+            MessageBox.Show("상태 : " + SelectedState +" 담당자 : " + Manager + " 종류 : " + WorkType + " 상세 내용 : " + DetailWorkData);
         }
         #endregion
     }

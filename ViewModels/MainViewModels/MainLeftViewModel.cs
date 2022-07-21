@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using KKOK.ViewModels.Main;
 using KKOK.ViewModels;
+using System.Windows;
 
 namespace KKOK.ViewModels.MainViewModels
 {
@@ -18,7 +19,11 @@ namespace KKOK.ViewModels.MainViewModels
             set
             {
                 SetProperty(ref _leftContent, value);
-                RaisePropertyChanged(nameof(LeftContent));
+                //RaisePropertyChanged(nameof(LeftContent));
+                //OnPropertyChanged(nameof(LeftContent));
+               
+                
+                
             }
         }
     }

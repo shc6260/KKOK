@@ -17,16 +17,10 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ComboBox Text="{Binding State}" Margin="10">
-            <ComboBoxItem Content="열림"/>
-            <ComboBoxItem Content="진행"/>
-            <ComboBoxItem Content="완료"/>
-            <ComboBoxItem Content="재진행"/>
-            <ComboBoxItem Content="닫힘"/>
-        </ComboBox>
-        <TextBox Grid.Row="1" Style="{StaticResource WaterMarkTextBox}" Tag="담당자"/>
-        <TextBox Grid.Row="2" Text="{Binding WorkType}" Style="{StaticResource WaterMarkTextBox}" Tag="종류"/>
-        <TextBox Grid.Row="3"  Text="{Binding DetailWorkData}" Style="{StaticResource WaterMarkTextBox}" Tag="업무 상세 내용"/>
-        <Button Grid.Row="4" Content="저장" Command="{Binding BtnSaveCmd}" Style="{StaticResource BtnStyle1}"/>
+        <ComboBox Margin="10" Text="{Binding SelectedState}" ItemsSource="{Binding StateItem}"/>
+        <TextBox Grid.Row="1" Text="{Binding Manager}" Style="{StaticResource WaterMarkTextBox}" Tag="{StaticResource ManagerString}"/>
+        <TextBox Grid.Row="2" Text="{Binding WorkType}" Style="{StaticResource WaterMarkTextBox}" Tag="{StaticResource TypeString}"/>
+        <TextBox Grid.Row="3" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding DetailWorkData}" Style="{StaticResource WaterMarkTextBox}" Tag="{StaticResource DetailWorkString}"/>
+        <Button Grid.Row="4" Content="{StaticResource SaveString}" Command="{Binding ButtonSave}" Style="{StaticResource ButtonStyle1}"/>
     </Grid>
 </Window>
