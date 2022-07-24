@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32616.157
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KKOK", "KKOK.csproj", "{6B833DDF-A40D-49CF-B1FA-1A93C9AA7AE3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KKOK", "KKOK.csproj", "{6B833DDF-A40D-49CF-B1FA-1A93C9AA7AE3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KKOK_WEB", "KOKKServer\KKOK_WEB\KKOK_WEB.csproj", "{A43691E9-FFF1-408E-B3B5-F5A71A36A500}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{6B833DDF-A40D-49CF-B1FA-1A93C9AA7AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B833DDF-A40D-49CF-B1FA-1A93C9AA7AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6B833DDF-A40D-49CF-B1FA-1A93C9AA7AE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A43691E9-FFF1-408E-B3B5-F5A71A36A500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A43691E9-FFF1-408E-B3B5-F5A71A36A500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A43691E9-FFF1-408E-B3B5-F5A71A36A500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A43691E9-FFF1-408E-B3B5-F5A71A36A500}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
