@@ -17,6 +17,42 @@ namespace KKOK.Models.WorkModel
         public string WorkType { get; set; }
         public string Comment { get; set; }
         public string SecheduleData { get; set; }
+
+        public static WorkListModel From(WorkListData data)
+        {
+            return new WorkListModel()
+            {
+                No = data.No,
+                WorkTitle = data.WorkTitle,
+                Manager = data.Manager,
+                State = data.State,
+            };
+        }
+    } 
+
+    public class WorkListData
+    {
+        public WorkListData(int no, string workTitle, string manager, string state)
+        {
+            No = no;
+            WorkTitle = workTitle;
+            Manager = manager;
+            State = state;
+
+        }
+        public int No { get; }
+        public string WorkTitle { get; }
+        public string Manager { get; }
+        public string State { get; }
+
+        public static WorkListData From((int No, string WorkTitle, string Manager, string State)data)
+        {
+            return new WorkListData(
+                data.No,
+                data.WorkTitle,
+                data.Manager,
+                data.State
+                );
+        }
     }
-    
 }

@@ -16,6 +16,7 @@ namespace KKOK.ViewModels
 {
     internal class StateChangeViewModel : ViewModelBase
     {
+        #region Constructor
         public StateChangeViewModel()
         {
             StateItem = new ObservableCollection<string>();
@@ -24,71 +25,56 @@ namespace KKOK.ViewModels
             StateItem.Add("완료");
             StateItem.Add("재진행");
             StateItem.Add("닫힘");
-            ButtonSave = new DelegateCommand(ButtonSaveCommand);
-        }
+        } 
+        #endregion
 
         #region properties
         private string detailWorkData;
         public string DetailWorkData
         {
-            get { return detailWorkData; }
-            set { detailWorkData = value;
-                OnPropertyChanged(DetailWorkData);
-            }
+            get => detailWorkData;
+            set => SetProperty(ref detailWorkData, value);
         }
         private string manager;
         public string Manager
         {
-            get { return manager; }
-            set { manager = value;
-                OnPropertyChanged(Manager);
-            }
+            get => manager;
+            set => SetProperty(ref manager, value);
         }
-        private string state;
-        public string State
-        {
-            get { return state; }
-            set { state = value;
-                OnPropertyChanged(State);
-            }
-        }
+
         private string workType;
 
         public string WorkType
         {
-            get { return workType; }
-            set { workType = value;
-                OnPropertyChanged(WorkType);
-            }
+            get => workType;
+            set => SetProperty(ref workType, value);
         }
-
-
-        public DelegateCommand ButtonSave { get; set; }
 
         private ObservableCollection<string> stateItem;
 
         public ObservableCollection<string> StateItem
         {
-            get { return stateItem; }
-            set { stateItem = value;
-                
-            }
+            get => stateItem;
+            set => SetProperty(ref stateItem, value);
         }
 
         private string selectedState;
         public string SelectedState
         {
-            get { return selectedState; }
-            set { selectedState = value;
-                OnPropertyChanged(SelectedState);
-            }
+            get => selectedState;
+            set => SetProperty(ref selectedState, value);
         }
+        #endregion
+
+        #region DelegateCommand
+        private DelegateCommand buttonSave { get; set; }
+        public DelegateCommand ButtonSave => buttonSave = buttonSave ?? new DelegateCommand(ButtonSaveCommand); 
         #endregion
 
         #region ButtonEvent
         private void ButtonSaveCommand()
         {
-            MessageBox.Show("상태 : " + SelectedState +" 담당자 : " + Manager + " 종류 : " + WorkType + " 상세 내용 : " + DetailWorkData);
+            MessageBox.Show("상태 : " + SelectedState + " 담당자 : " + Manager + " 종류 : " + WorkType + " 상세 내용 : " + DetailWorkData);
         }
         #endregion
     }

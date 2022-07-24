@@ -17,10 +17,21 @@
             <RowDefinition Height="3*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ComboBox Margin="10" Text="{Binding SelectedState}" ItemsSource="{Binding StateItem}"/>
-        <TextBox Grid.Row="1" Text="{Binding Manager}" Style="{StaticResource WaterMarkTextBox}" Tag="{StaticResource ManagerString}"/>
-        <TextBox Grid.Row="2" Text="{Binding WorkType}" Style="{StaticResource WaterMarkTextBox}" Tag="{StaticResource TypeString}"/>
-        <TextBox Grid.Row="3" TextWrapping="Wrap" AcceptsReturn="True" Text="{Binding DetailWorkData}" Style="{StaticResource WaterMarkTextBox}" Tag="{StaticResource DetailWorkString}"/>
-        <Button Grid.Row="4" Content="{StaticResource SaveString}" Command="{Binding ButtonSave}" Style="{StaticResource ButtonStyle1}"/>
+        <ComboBox Margin="10" SelectedItem="{Binding SelectedState}"
+                  ItemsSource="{Binding StateItem}"/>
+        <TextBox Grid.Row="1" Text="{Binding Manager,UpdateSourceTrigger=PropertyChanged}"
+                 Style="{StaticResource WaterMarkTextBox}"
+                 Tag="{StaticResource ManagerString}"/>
+        <TextBox Grid.Row="2" Text="{Binding WorkType}"
+                 Style="{StaticResource WaterMarkTextBox}"
+                 Tag="{StaticResource TypeString}"/>
+        <TextBox Grid.Row="3" TextWrapping="Wrap"
+                 AcceptsReturn="True"
+                 Text="{Binding DetailWorkData}"
+                 Style="{StaticResource WaterMarkTextBox}"
+                 Tag="{StaticResource DetailWorkString}"/>
+        <Button Grid.Row="4" Content="{StaticResource SaveString}"
+                Command="{Binding ButtonSave}"
+                Style="{StaticResource ButtonStyle1}"/>
     </Grid>
 </Window>

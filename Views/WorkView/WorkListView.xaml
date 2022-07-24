@@ -16,11 +16,10 @@
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <TextBox Width="100" HorizontalAlignment="Right" VerticalAlignment="Center" Style="{StaticResource WaterMarkTextBox}" Tag="담당자" Margin="0,0,50,0"/>
-        <Button Grid.Column="1" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Right" Content="조회"/>
-        <DataGrid RowHeaderWidth="0" Margin="5" BorderThickness="1" BorderBrush="Black" Background="White"
-                  SelectedItem="{Binding SelectedItem}" IsReadOnly="True" 
-ItemsSource="{Binding Item}" AutoGenerateColumns="False" CanUserSortColumns="False" Grid.Row="1">
+        <TextBox Width="100" HorizontalAlignment="Right" Text="{Binding NameToFillter,UpdateSourceTrigger=PropertyChanged}" 
+                 Style="{StaticResource WaterMarkTextBox}" Tag="{StaticResource NameFilterString}" />
+        <DataGrid SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding WorkListCollection}"
+                  Style="{StaticResource DataGridBaseStyle}" Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="Auto" CanUserResize="False"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle2}"
@@ -40,7 +39,9 @@ ItemsSource="{Binding Item}" AutoGenerateColumns="False" CanUserSortColumns="Fal
                     Binding="{Binding Manager}"
                     Header="{StaticResource ManagerString}"
                     />
-                <DataGridTemplateColumn HeaderStyle="{StaticResource DataGridHeaderStyle2}" Header="{StaticResource StateString}">
+                <DataGridTemplateColumn HeaderStyle="{StaticResource DataGridHeaderStyle2}"
+                                        Header="{StaticResource StateString}"
+                                        CanUserResize="False">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Style="{StaticResource ItemButtonStyle}" 

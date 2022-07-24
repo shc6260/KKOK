@@ -8,6 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\DXMSubtitlesM-KSCpc-EUC-H.ttf" />
+    <None Remove="Fonts\NotoSansKR-Black.otf" />
+    <None Remove="Fonts\NotoSansKR-Bold.otf" />
+    <None Remove="Fonts\NotoSansKR-Light.otf" />
+    <None Remove="Fonts\NotoSansKR-Medium.otf" />
+    <None Remove="Fonts\NotoSansKR-Regular.otf" />
+    <None Remove="Fonts\NotoSansKR-Thin.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ViewModels\ViewModel\" />
     <Folder Include="Views\View\" />
   </ItemGroup>
@@ -16,6 +26,16 @@
     <PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="6.0.6" />
     <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
     <PackageReference Include="Prism.Core" Version="8.1.97" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Fonts\DXMSubtitlesM-KSCpc-EUC-H.ttf" />
+    <Resource Include="Fonts\NotoSansKR-Black.otf" />
+    <Resource Include="Fonts\NotoSansKR-Bold.otf" />
+    <Resource Include="Fonts\NotoSansKR-Light.otf" />
+    <Resource Include="Fonts\NotoSansKR-Medium.otf" />
+    <Resource Include="Fonts\NotoSansKR-Regular.otf" />
+    <Resource Include="Fonts\NotoSansKR-Thin.otf" />
   </ItemGroup>
 
 </Project>

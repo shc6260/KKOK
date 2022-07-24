@@ -10,6 +10,7 @@ namespace KKOK.ViewModels.Main
 {
     internal class ViewModelBase : INotifyPropertyChanged
     {
+        private ViewModelBase Parent;
 
         public ViewModelBase()
         {
@@ -33,8 +34,7 @@ namespace KKOK.ViewModels.Main
             }
         }
 
-        private ViewModelBase Parent;
-
+    
         protected bool SetProperty<T>(ref T property, T value)
         {
             try

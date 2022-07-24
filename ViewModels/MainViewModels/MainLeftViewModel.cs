@@ -19,7 +19,7 @@ namespace KKOK.ViewModels.MainViewModels
             set
             {
                 SetProperty(ref _leftContent, value);
-                //RaisePropertyChanged(nameof(LeftContent));
+                RaisePropertyChanged(nameof(LeftContent));
                 //OnPropertyChanged(nameof(LeftContent));
                
                 

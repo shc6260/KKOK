@@ -28,61 +28,6 @@
     </Style>
     <!--#endregion-->
 
-    <!--#region ItemButtonStyle -->
-    <Style x:Key="ItemButtonStyle" TargetType="Button">
-        <Setter Property="Background" Value="White"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="BorderBrush" Value="{x:Null}"/>
-    </Style>
-    <!--#endregion-->
-    
-    <!--#region MainListHeaderStyle -->
-    <Style x:Key="DataGridHeaderStyle1" TargetType="DataGridColumnHeader">
-        <Setter Property="Background" Value="#FFA1D8F3"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="BorderBrush" Value="Black"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="FontFamily" Value="Yu Gothic UI Semibold"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="FontSize" Value="15"/>
-    </Style>
-    <!--#endregion-->
-
-    <!--#region WorkListHeaderStyle -->
-    <Style x:Key="DataGridHeaderStyle2" TargetType="DataGridColumnHeader">
-        <Setter Property="Background" Value="#FFA1D8F3"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="BorderBrush" Value="Black"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="FontFamily" Value="Yu Gothic UI Semibold"/>
-        <Setter Property="HorizontalContentAlignment" Value="Center"/>
-        <Setter Property="Height" Value="30"/>
-        <Setter Property="FontSize" Value="15"/>
-    </Style>
-    <!--#endregion-->
-
-    <!--#region WorkListItemStyle -->
-    <Style x:Key="DataGridItemStyle" TargetType="TextBlock">
-        <Setter Property="Background" Value="White"/>
-        <Setter Property="Foreground" Value="Black"/>
-        <Setter Property="FontFamily" Value="Yu Gothic UI Semilight"/>
-        <Setter Property="FontSize" Value="15"/>
-
-    </Style>
-    <!--#endregion-->
-
-    <!--#region DetailWorkTextBoxStyle -->
-    <Style x:Key="DetailWorkTextBoxStyle" TargetType="TextBox">
-        <Setter Property="FontFamily" Value="Yu Gothic UI Semilight"/>
-        <Setter Property="Margin" Value="10"/>
-        <Setter Property="IsReadOnly" Value="True"/>
-        <Setter Property="BorderBrush" Value="Black"/>
-        <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="FontFamily" Value="Yu Gothic UI Semilight"/>
-    </Style>
-    <!--#endregion-->
-
     <!--#region WaterMarkTextBoxStyle -->
     <Style x:Key="DefaultTextBox" TargetType="TextBox">
         <Setter Property="VerticalAlignment" Value="Stretch"/>
@@ -126,6 +71,104 @@
     </Style>
     <!--#endregion-->
 
+    <!--#region ItemButtonStyle -->
+    <Style x:Key="ItemButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="{x:Null}"/>
+    </Style>
+    <!--#endregion-->
+    
+    <!--#region MainListHeaderStyle -->
+    <Style x:Key="DataGridHeaderStyle1" TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="#FFA1D8F3"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontFamily" Value="New Gulim"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region WorkListHeaderStyle -->
+    <Style x:Key="DataGridHeaderStyle2" TargetType="DataGridColumnHeader">
+        <Setter Property="Background" Value="#FFA1D8F3"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontFamily" Value="/KOKK;component/Fonts/#Noto Sans KR"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="Height" Value="30"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region WorkListItemStyle -->
+    <Style x:Key="DataGridItemStyle" TargetType="TextBlock">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="DX영화자막 M"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+    <Style x:Key="DataGridItemStyle2" TargetType="DataGridCell">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="FontFamily" Value="Yu Gothic"/>
+        <Setter Property="FontSize" Value="15"/>
+    </Style>
+
+    <!--#endregion-->
+
+    <!--#region DetailWorkTextBoxStyle -->
+    <Style x:Key="RoundTextBoxBorder" TargetType="Border">
+        <Setter Property="CornerRadius" Value="5"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+
+    <Style x:Key="DetailWorkTextBoxStyle" TargetType="TextBox">
+        <Setter Property="FontFamily" Value="Yu Gothic UI Semilight"/>
+        <Setter Property="Margin" Value="10"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="FontFamily" Value="Yu Gothic UI Semilight"/>
+        <Style.Resources>
+            <Style TargetType="{x:Type Border}" BasedOn="{StaticResource RoundTextBoxBorder}"/>
+        </Style.Resources>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region DataGrid Basic style -->
+    <Style x:Key="DataGridBaseStyle" TargetType="DataGrid">
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="CanUserSortColumns" Value="False"/>
+        <Setter Property="RowHeaderWidth" Value="0"/>
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CanUserReorderColumns" Value="False"/>
+        <Setter Property="SnapsToDevicePixels" Value="True"/>
+        <Setter Property="VerticalScrollBarVisibility" Value="Hidden"/>
+    </Style>
+    <!--#endregion-->
+
+    <!--#region MainListDataGridStyle -->
+    <Style x:Key="MainListStyle" TargetType="DataGrid">
+        <Setter Property="IsReadOnly" Value="True"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="#FFA1D8F3"/>
+        <Setter Property="RowHeaderWidth" Value="0"/>
+        <Setter Property="CanUserSortColumns" Value="False"/>
+        <Setter Property="AutoGenerateColumns" Value="False"/>
+    </Style>
+    <!--#endregion-->
+
     <!--#region String Resource -->
     <system:String x:Key="SaveString">저장</system:String>
     <system:String x:Key="AddString">업무 추가</system:String>
@@ -139,6 +182,7 @@
     <system:String x:Key="ScheduleString">일정 내용</system:String>
     <system:String x:Key="TypeString">종류</system:String>
     <system:String x:Key="CommentString">업무 코멘트</system:String>
+    <system:String x:Key="NameFilterString">이름 필터</system:String>
     <!--#endregion-->
-
+    
 </ResourceDictionary>

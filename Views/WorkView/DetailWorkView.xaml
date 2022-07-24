@@ -25,13 +25,12 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBox Text="{StaticResource WorkTitleString}" Style="{StaticResource DetailWorkTextBoxStyle}" />
+                <TextBox Text="{Binding WorkTitle,UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DetailWorkTextBoxStyle}" />
                 <TextBox Grid.Row="1" Style="{StaticResource DetailWorkTextBoxStyle}"  Text="{StaticResource DetailWorkString}"/>
             </Grid>
             <Grid Grid.Column="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="57*"/>
-                    <ColumnDefinition Width="17*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -42,13 +41,14 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"   Text="{StaticResource NoString}" Grid.ColumnSpan="2" />
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"  Grid.Row="1" Text="{StaticResource ScheduleString}" Grid.ColumnSpan="2" />
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"  Grid.Row="2" Text="{StaticResource ManagerString}" Grid.ColumnSpan="2" />
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="3" Text="{StaticResource StateString}" Grid.ColumnSpan="2" />
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="4" Text="{StaticResource EndDateString}" Grid.ColumnSpan="2"/>
-                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="5" Text="{StaticResource TypeString}" Grid.ColumnSpan="2" />
-                <Button Style="{StaticResource ButtonStyle1}" Grid.Row="6" Content="{StaticResource EditString}" Command="{Binding ButtonStatePopup}" Grid.ColumnSpan="2" />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"   Text="{StaticResource NoString}"  />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"  Grid.Row="1" Text="{StaticResource ScheduleString}"  />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}"  Grid.Row="2" Text="{StaticResource ManagerString}"  />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="3" Text="{StaticResource StateString}"  />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="4" Text="{StaticResource EndDateString}" />
+                <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="5" Text="{StaticResource TypeString}"  />
+                <Button Style="{StaticResource ButtonStyle1}" Grid.Row="6" Content="{StaticResource EditString}" Command="{Binding ButtonStatePopup}" />
+                
             </Grid>
         </Grid>
         <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="1" Text="{StaticResource CommentString}" />

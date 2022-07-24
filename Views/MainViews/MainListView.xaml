@@ -6,13 +6,13 @@
              xmlns:local="clr-namespace:KKOK.Views.MainViews"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-
     <Grid>
-        <DataGrid IsReadOnly="True" BorderThickness="0" Background="White" RowHeaderWidth="0" CanUserSortColumns="False" SelectedItem="{Binding SelectedType}" ItemsSource="{Binding Items}" AutoGenerateColumns="False" >
+        <DataGrid Style="{StaticResource MainListStyle}" SelectedItem="{Binding SelectedType}" ItemsSource="{Binding Items}" >
             <DataGrid.Columns>
-                <DataGridTextColumn CanUserResize="False" HeaderStyle="{StaticResource DataGridHeaderStyle1}" Width="*" 
-                                     Header="메뉴" Binding="{Binding Name}"
-                                     ElementStyle="{StaticResource DataGridItemStyle}"/>
+                <DataGridTextColumn CanUserResize="False"
+                                    HeaderStyle="{StaticResource DataGridHeaderStyle1}" Width="*" 
+                                    Header="메뉴" Binding="{Binding Name}"
+                                    ElementStyle="{StaticResource DataGridItemStyle}"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

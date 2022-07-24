@@ -20,78 +20,82 @@ namespace KKOK.ViewModels
         #region Constructor
         public AddWorkViewModel()
         {
-            ButtonAddCommand = new DelegateCommand(ButtonAddPush);
-        } 
+            
+        }
         #endregion
 
         #region properties
+
+        private int no =1;
+        
         private string workTitle;
         public string WorkTitle
         {
-            get { return workTitle; }
-            set { workTitle = value;
-                OnPropertyChanged(WorkTitle);
-            }
+            get => workTitle;
+            set => SetProperty(ref workTitle, value);
         }
         private string detailWorkData;
         public string DetailWorkData
         {
-            get { return detailWorkData; }
-            set { detailWorkData = value;
-                OnPropertyChanged(DetailWorkData);
-            }
+            get => detailWorkData;
+            set => SetProperty(ref detailWorkData, value);
         }
         private string secheduleData;
         public string SecheduleData
         {
-            get { return secheduleData; }
-            set { secheduleData = value;
-                OnPropertyChanged(SecheduleData);
-            }
+            get => secheduleData;
+            set => SetProperty(ref secheduleData, value);
         }
         private string manager;
         public string Manager
         {
-            get { return manager; }
-            set { manager = value;
-                OnPropertyChanged(Manager);
-            }
+            get => manager;
+            set => SetProperty(ref manager, value);
         }
 
         private DateTime endDate = DateTime.Now;
         public DateTime EndDate
         {
-            get { return endDate; }
-            set { endDate = value;
-            }
+            get => endDate;
+            set => SetProperty(ref endDate, value);
         }
 
         private string workType;
 
         public string WorkType
         {
-            get { return workType; }
-            set { workType = value;
-                OnPropertyChanged(WorkType);
-            }
+            get => workType;
+            set => SetProperty(ref workType, value);
         }
 
         #endregion
 
-
-        public DelegateCommand ButtonAddCommand { get; set; }
-
+        #region DelegateCommand
+        private DelegateCommand buttonAddCommand;
+        public DelegateCommand ButtonAddCommand => buttonAddCommand = buttonAddCommand ?? new DelegateCommand(ButtonAddWork); 
+        #endregion
 
         #region ButtonEvent
-        private void ButtonAddPush()
+        private void ButtonAddWork()
         {
-            MessageBox.Show(WorkTitle);
-            MessageBox.Show(DetailWorkData);
-            MessageBox.Show(SecheduleData);
-            MessageBox.Show(Manager);
-            MessageBox.Show(EndDate.ToString("yyyy/MM/dd"));
-            MessageBox.Show(WorkType);
+            MessageBox.Show("업무를 추가했습니다.");
+            OnAddWorkButtonClick();
         }
+
+        public WorkListData GetAddWorkListData()
+        {
+            return WorkListData.From((no++, WorkTitle, Manager, "열기"));
+        }
+
+        public EventHandler AddButtonClick;
+
+        private void OnAddWorkButtonClick()
+        {
+            AddButtonClick?.Invoke(this, new EventArgs());
+        }
+
+        
         #endregion
+
     }
 }
