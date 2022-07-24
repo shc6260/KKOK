@@ -13,17 +13,20 @@ namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
 {
     class ScheduleDiagramDetailViewModel
     {
+        #region Constructs
         public ScheduleDiagramDetailViewModel()
         {
 
         }
+        #endregion
 
+        #region Proprety
         private ScheduleDiagramDetailModel items;
         public ScheduleDiagramDetailModel Items
         {
             get
             {
-                if(items == null)
+                if (items == null)
                 {
                     items = new ScheduleDiagramDetailModel();
                     items.ExpectationEndDate = DateTime.Now;
@@ -32,11 +35,25 @@ namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
                 return items;
             }
         }
+        private ScheduleModuleViewModel scheduleModuleViewModel;
+        public ScheduleModuleViewModel ScheduleModuleViewModel
+        {
+            get
+            {
+                if (scheduleModuleViewModel == null)
+                {
+                    scheduleModuleViewModel = new ScheduleModuleViewModel();
+                }
+                return scheduleModuleViewModel;
+            }
+        } 
+        #endregion
 
-        private ICommand noticeAddButtonClick;
-        public ICommand NoticeAddButtonClick => noticeAddButtonClick =
+        private RelayCommand noticeAddButtonClick;
+        public RelayCommand NoticeAddButtonClick => noticeAddButtonClick =
             noticeAddButtonClick ?? new RelayCommand(AddButtonClick, CanButtonCmdExe);
 
+        #region ButtonEvent
         private void AddButtonClick()
         {
             ScheduleAddView sub = new ScheduleAddView();
@@ -47,6 +64,7 @@ namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
         private bool CanButtonCmdExe()
         {
             return true;
-        }
+        } 
+        #endregion
     }
 }

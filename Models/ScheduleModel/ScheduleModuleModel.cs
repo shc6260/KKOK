@@ -10,6 +10,7 @@ namespace KKOK.Models.ScheduleModel
     {
         public string? TotalDate { get; set; }
         public string? ManagerName { get; set; }
+        public string? Period { get; set; }
         public string? WorkName { get; set; }
         public int WorkNumber { get; set; }
     }

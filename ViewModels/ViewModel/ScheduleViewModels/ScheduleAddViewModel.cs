@@ -64,7 +64,7 @@ namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
         #endregion
 
         
-        private ICommand scheduleAddButtonClick;
+        private RelayCommand scheduleAddButtonClick;
         public ICommand ScheduleAddButtonClick => scheduleAddButtonClick = 
             scheduleAddButtonClick ?? new RelayCommand(AddButtonClick, CanButtonCmdExe);
 

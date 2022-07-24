@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace KKOK.Views.ScheduleViews
 {
     /// <summary>
-    /// ScheduleDiagramDetailView.xaml에 대한 상호 작용 논리
+    /// NoticeAddView.xaml에 대한 상호 작용 논리
     /// </summary>
-    public partial class ScheduleDiagramDetailView : UserControl
+    public partial class NoticeAddView : Window
     {
-        public ScheduleDiagramDetailView()
+        public NoticeAddView()
         {
             InitializeComponent();
         }

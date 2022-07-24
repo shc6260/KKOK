@@ -9,11 +9,14 @@ namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
     class ProjectProgressViewModel : ViewModelBase.ViewModelBase
     {
 
+        #region Constructs
         public ProjectProgressViewModel()
         {
             ProjectPersent = (ProjectNowSuccess / ProjectWork) * 100;
             PersonalPersent = (PersonalNowSuccess / PersonalWork) * 100;
-        }
+        } 
+        #endregion
+
         #region Property
         private double projectPersent;
         public double ProjectPersent

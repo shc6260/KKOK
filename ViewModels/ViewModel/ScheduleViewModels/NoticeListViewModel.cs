@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using KKOK.Models.ScheduleModel;
+using KKOK.Views.ScheduleViews;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -13,14 +14,16 @@ namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
 {
     class NoticeListViewModel
     {
+        #region Constructs
         public NoticeListViewModel()
         {
 
-        }
+        } 
+        #endregion
 
-        private ICommand noticeAddButtonClick;
-        public ICommand NoticeAddButtonClick => noticeAddButtonClick =
-            noticeAddButtonClick ?? new RelayCommand(NoticeButtonClick, CanButtonCmdExe);
+        private RelayCommand noticeAddViewButtonClick;
+        public ICommand NoticeAddViewButtonClick => noticeAddViewButtonClick =
+            noticeAddViewButtonClick ?? new RelayCommand(NoticeButtonClick, CanButtonCmdExe);
 
         private ObservableCollection<NoticeListModel> notice;
         public ObservableCollection<NoticeListModel> Notice
@@ -38,7 +41,10 @@ namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
         #region ButtonEvent
         private void NoticeButtonClick()
         {
-            MessageBox.Show("1");
+            NoticeAddView sub = new NoticeAddView();
+            var viewModel = new NoticeAddViewModel();
+            sub.DataContext = viewModel;
+            sub.Show();
         }
         private bool CanButtonCmdExe()
         {
