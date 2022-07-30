@@ -120,6 +120,7 @@
     </Style>
     <!--#endregion-->
 
+    <!--#region ExpanderStyle -->
     <Style TargetType="Expander" x:Key="ExpanderStyle">
         <Setter Property="Background" Value="Black"/>
         <Setter Property="Foreground" Value="Black"/>
@@ -157,6 +158,7 @@
             </Setter.Value>
         </Setter>
     </Style>
+    <!--#endregion-->
 
     <!--#region MainListDataGridStyle -->
     <Style x:Key="MainListStyle" TargetType="DataGrid">

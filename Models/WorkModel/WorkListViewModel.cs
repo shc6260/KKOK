@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KKOK.Models.WorkModel
 {
-    public class WorkListModel
+    public class WorkListViewModel
     {
         public int No { get; set; }
         public string WorkTitle { get; set; }
@@ -18,9 +18,9 @@ namespace KKOK.Models.WorkModel
         public string Comment { get; set; }
         public string SecheduleData { get; set; }
 
-        public static WorkListModel From(WorkListData data)
+        public static WorkListViewModel From(WorkListData data)
         {
-            return new WorkListModel()
+            return new WorkListViewModel()
             {
                 No = data.No,
                 WorkTitle = data.WorkTitle,

@@ -31,7 +31,7 @@ namespace KKOK.ViewModels
         {
             if (!string.IsNullOrEmpty(NameToFillter))
             {
-                var WorkList = workList as WorkListModel;
+                var WorkList = workList as Models.WorkModel.WorkListViewModel;
                 return WorkList != null && WorkList.Manager.Contains(NameToFillter);
             }
             return true;
@@ -65,37 +65,37 @@ namespace KKOK.ViewModels
 }*/
 
         #region properties
-        private ObservableCollection<WorkListModel> inneritems
-        { get; } = new ObservableCollection<WorkListModel>();
+        private ObservableCollection<Models.WorkModel.WorkListViewModel> inneritems
+        { get; } = new ObservableCollection<Models.WorkModel.WorkListViewModel>();
 
-        private ReadOnlyObservableCollection<WorkListModel> items;
-        public ReadOnlyObservableCollection<WorkListModel> Items
+        private ReadOnlyObservableCollection<Models.WorkModel.WorkListViewModel> items;
+        public ReadOnlyObservableCollection<Models.WorkModel.WorkListViewModel> Items
         {
             get
             {
                 if (items == null)
                 {
-                    items = new ReadOnlyObservableCollection<WorkListModel>(inneritems);
-                    inneritems.Add(new WorkListModel() {No=1,WorkTitle="test1",Manager="이선웅",State="열기"});
-                    inneritems.Add(new WorkListModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
-                    inneritems.Add(new WorkListModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
+                    items = new ReadOnlyObservableCollection<Models.WorkModel.WorkListViewModel>(inneritems);
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열기"});
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
+                    inneritems.Add(new Models.WorkModel.WorkListViewModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
                 }
                 return items;
             }
@@ -122,14 +122,14 @@ namespace KKOK.ViewModels
             add.DataContext = viewModel;
             add.Show();
             
-            viewModel.AddButtonClick += (_, __) => inneritems.Add(WorkListModel.From(viewModel.GetAddWorkListData()));
+            viewModel.AddButtonClick += (_, __) => inneritems.Add(Models.WorkModel.WorkListViewModel.From(viewModel.GetAddWorkListData()));
         } 
         #endregion
 
         #region SelectedItem
-        private WorkListModel selectedItem;
+        private Models.WorkModel.WorkListViewModel selectedItem;
 
-        public WorkListModel SelectedItem
+        public Models.WorkModel.WorkListViewModel SelectedItem
         {
             get => selectedItem;
             set
