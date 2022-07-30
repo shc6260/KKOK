@@ -1,5 +1,6 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using KKOK.Models.ScheduleModel;
+using KKOK.ViewModels.Main;
 using KKOK.Views.ScheduleViews;
 using Prism.Commands;
 using System;
@@ -13,7 +14,7 @@ using System.Windows.Input;
 
 namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
 {
-    class ScheduleModuleViewModel : ViewModelBase.ViewModelBase
+    class ScheduleModuleViewModel : ViewModelBase
     {
 
         #region Constructs
