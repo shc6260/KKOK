@@ -1,6 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using KKOK.Models.ScheduleModel;
 using KKOK.Views.ScheduleViews;
+using Prism.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -18,22 +19,26 @@ namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
         public NoticeListViewModel()
         {
 
-        } 
+        }
         #endregion
 
-        private RelayCommand noticeAddViewButtonClick;
-        public ICommand NoticeAddViewButtonClick => noticeAddViewButtonClick =
-            noticeAddViewButtonClick ?? new RelayCommand(NoticeButtonClick, CanButtonCmdExe);
+        
 
-        private ObservableCollection<NoticeListModel> notice;
-        public ObservableCollection<NoticeListModel> Notice
+        private DelegateCommand noticeAddViewButtonClick;
+        public DelegateCommand NoticeAddViewButtonClick => noticeAddViewButtonClick =
+            noticeAddViewButtonClick ?? new DelegateCommand(NoticeButtonClick, CanButtonCmdExe);
+
+        private ObservableCollection<NoticeListModel> innernotice { get; } = new ObservableCollection<NoticeListModel>();
+        private ReadOnlyObservableCollection<NoticeListModel> notice;
+        public ReadOnlyObservableCollection<NoticeListModel> Notice
         {
             get
             {
                 if (notice == null)
                 {
-                    notice = new ObservableCollection<NoticeListModel>();
-                    notice.Add(new NoticeListModel() { Date=DateTime.Now, NoticeContent="11231212",Writer="이석종", NoticeDetailContent="AAAAAA"});
+                    notice = new ReadOnlyObservableCollection<NoticeListModel>(innernotice);
+
+                    innernotice.Add(new NoticeListModel() { Date=DateTime.Now, NoticeContent="11231212",Writer="이석종", NoticeDetailContent="AAAAAA"});
                 }
                 return notice;
             }

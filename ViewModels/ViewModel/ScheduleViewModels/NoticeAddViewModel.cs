@@ -1,4 +1,5 @@
 ﻿using GalaSoft.MvvmLight.Command;
+using Prism.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -40,9 +41,9 @@ namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
         } 
         #endregion
 
-        private RelayCommand noticeAddButtonClick;
-        public ICommand NoticeAddButtonClick => noticeAddButtonClick =
-            noticeAddButtonClick ?? new RelayCommand(AddButtonClick, CanButtonCmdExe);
+        private DelegateCommand noticeAddButtonClick;
+        public DelegateCommand NoticeAddButtonClick => noticeAddButtonClick =
+            noticeAddButtonClick ?? new DelegateCommand(AddButtonClick, CanButtonCmdExe);
 
         #region ButtonEvent
         private void AddButtonClick()

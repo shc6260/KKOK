@@ -2,7 +2,7 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:KKOK"
-             StartupUri="Views\ScheduleViews\ScheduleDiagramDetailView.xaml">
+             StartupUri="Views\ScheduleViews\ScheduleDiagramView.xaml">
     <Application.Resources>
          
     </Application.Resources>
