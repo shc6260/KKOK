@@ -24,24 +24,24 @@
                 <DataGridTextColumn Width="Auto" CanUserResize="False"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle2}"
                     Binding="{Binding No}"
-                                    ElementStyle="{StaticResource DataGridItemStyle}"
+                                    ElementStyle="{StaticResource WorkListItemStyle}"
                     Header="{StaticResource NoString}"
                     />
                 <DataGridTextColumn Width="3*" CanUserResize="False"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle2}"
-                                    ElementStyle="{StaticResource DataGridItemStyle}"
+                                    ElementStyle="{StaticResource WorkListItemStyle}"
                     Binding="{Binding WorkTitle}"
                     Header="{StaticResource WorkTitleString}"
                     />
-                <DataGridTextColumn Width="Auto" CanUserResize="False"
+                <DataGridTextColumn Width="1*" CanUserResize="False"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle2}"
-                                    ElementStyle="{StaticResource DataGridItemStyle}"
+                                    ElementStyle="{StaticResource WorkListItemStyle}"
                     Binding="{Binding Manager}"
                     Header="{StaticResource ManagerString}"
                     />
                 <DataGridTemplateColumn HeaderStyle="{StaticResource DataGridHeaderStyle2}"
                                         Header="{StaticResource StateString}"
-                                        CanUserResize="False">
+                                        CanUserResize="False" Width="0.5*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Style="{StaticResource ItemButtonStyle}" 

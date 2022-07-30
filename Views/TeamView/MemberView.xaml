@@ -20,8 +20,7 @@
                     Width="2*"
                     CanUserResize="False"
                     HeaderStyle="{StaticResource DataGridHeaderStyle2}"
-                    
-                    CellStyle="{StaticResource DataGridItemStyle2}"
+                    ElementStyle="{StaticResource WorkListItemStyle}"
                     />
                 <DataGridTextColumn
                     Binding="{Binding Job}"
@@ -29,7 +28,7 @@
                     Width="1*"
                     CanUserResize="False"
                     HeaderStyle="{StaticResource DataGridHeaderStyle2}"
-                    CellStyle="{StaticResource DataGridItemStyle2}"
+                    ElementStyle="{StaticResource WorkListItemStyle}"
                     />
             </DataGrid.Columns>
         </DataGrid>

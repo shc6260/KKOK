@@ -72,7 +72,7 @@ namespace KKOK.ViewModels
 
         #region DelegateCommand
         private DelegateCommand buttonAddCommand;
-        public DelegateCommand ButtonAddCommand => buttonAddCommand = buttonAddCommand ?? new DelegateCommand(ButtonAddWork); 
+        public ICommand ButtonAddCommand => buttonAddCommand = buttonAddCommand ?? new DelegateCommand(ButtonAddWork); 
         #endregion
 
         #region ButtonEvent

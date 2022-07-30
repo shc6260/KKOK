@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KKOK.Models.WorkModel
 {
-    public class MemberModel
+    public class MemberListItemViewModel
     {
         public string Name { get; set; }
         public string Job { get; set; }

@@ -68,7 +68,7 @@ namespace KKOK.ViewModels
 
         #region DelegateCommand
         private DelegateCommand buttonSave { get; set; }
-        public DelegateCommand ButtonSave => buttonSave = buttonSave ?? new DelegateCommand(ButtonSaveCommand); 
+        public ICommand ButtonSave => buttonSave = buttonSave ?? new DelegateCommand(ButtonSaveCommand); 
         #endregion
 
         #region ButtonEvent

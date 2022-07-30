@@ -9,14 +9,17 @@ namespace KKOK.Models.Datas
 {
     internal class FunctionListitemData
     {
-        public FunctionListitemData(FunctionsType type, string name)
+        public FunctionListitemData(FunctionsType type, string name, string iconpath)
         {
             this.Type = type;
             this.Name = name;
+            this.IconPath = iconpath;
         }
 
-        public FunctionsType Type { get; set; }
+        public FunctionsType Type { get;  }
 
-        public string Name { get; set; }
+        public string Name { get;  }
+
+        public string IconPath { get;  } //from만들기
     }
 }

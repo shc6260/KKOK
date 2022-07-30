@@ -50,6 +50,8 @@ namespace KKOK.ViewModels.Main
 
         }
 
+
+
         protected void RaisePropertyChanged(string propertyName)
         {
             if (PropertyChanged != null)

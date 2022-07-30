@@ -81,6 +81,21 @@ namespace KKOK.ViewModels
                     inneritems.Add(new WorkListModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
                     inneritems.Add(new WorkListModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
                     inneritems.Add(new WorkListModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 1, WorkTitle = "test1", Manager = "이선웅", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 2, WorkTitle = "test1", Manager = "신희찬", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 3, WorkTitle = "test1", Manager = "김태홍", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 4, WorkTitle = "test1", Manager = "이석종", State = "열기" });
+                    inneritems.Add(new WorkListModel() { No = 5, WorkTitle = "test1", Manager = "황성진", State = "열기" });
                 }
                 return items;
             }
@@ -91,11 +106,13 @@ namespace KKOK.ViewModels
         private Popup popup = new Popup();
 
         private DelegateCommand buttonAddPopup;
-        public DelegateCommand ButtonAddPopup => buttonAddPopup = buttonAddPopup ?? new DelegateCommand(ButtonAddWorkShow);
+        public ICommand ButtonAddPopup => buttonAddPopup = buttonAddPopup ?? new DelegateCommand(ButtonAddWorkShow);
 
         private DelegateCommand buttonStatePopup;
-        public DelegateCommand ButtonStatePopup => buttonStatePopup = buttonStatePopup ?? new DelegateCommand(popup.ButtonStateShow);
+        public ICommand ButtonStatePopup => buttonStatePopup = buttonStatePopup ?? new DelegateCommand(popup.ButtonStateShow);
         #endregion
+        
+
 
         #region ButtonAddWorkShow
         public void ButtonAddWorkShow()
@@ -104,7 +121,7 @@ namespace KKOK.ViewModels
             var viewModel = new AddWorkViewModel();
             add.DataContext = viewModel;
             add.Show();
-
+            
             viewModel.AddButtonClick += (_, __) => inneritems.Add(WorkListModel.From(viewModel.GetAddWorkListData()));
         } 
         #endregion

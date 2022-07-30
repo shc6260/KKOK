@@ -15,6 +15,12 @@
     <None Remove="Fonts\NotoSansKR-Medium.otf" />
     <None Remove="Fonts\NotoSansKR-Regular.otf" />
     <None Remove="Fonts\NotoSansKR-Thin.otf" />
+    <None Remove="Icons\chart.png" />
+    <None Remove="Icons\chat.png" />
+    <None Remove="Icons\group.png" />
+    <None Remove="Icons\home.png" />
+    <None Remove="Icons\search.png" />
+    <None Remove="Icons\work.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,6 +42,12 @@
     <Resource Include="Fonts\NotoSansKR-Medium.otf" />
     <Resource Include="Fonts\NotoSansKR-Regular.otf" />
     <Resource Include="Fonts\NotoSansKR-Thin.otf" />
+    <Resource Include="Icons\chart.png" />
+    <Resource Include="Icons\chat.png" />
+    <Resource Include="Icons\group.png" />
+    <Resource Include="Icons\home.png" />
+    <Resource Include="Icons\search.png" />
+    <Resource Include="Icons\work.png" />
   </ItemGroup>
 
 </Project>

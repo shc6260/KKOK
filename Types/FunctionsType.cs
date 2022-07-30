@@ -9,9 +9,11 @@ namespace KKOK.Types
     public enum FunctionsType
     {
         Home,
-        Work,
         Chart,
+        Work,
         Chat,
-        Team
-    }
-}
+        Team,
+    } 
+}     
+      
+      
