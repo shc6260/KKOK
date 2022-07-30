@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="KKOK.Views.ScheduleViews.ProjectProgressView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KKOK.ViewModels.ViewModel.ScheduleViewModels"
+        mc:Ignorable="d">
+    <UserControl.DataContext>
+        <local:ProjectProgressViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="72*"/>
+            <RowDefinition Height="137*"/>
+            <RowDefinition Height="241*"/>
+        </Grid.RowDefinitions>
+        <Label FontSize="15" Content="프로젝트 진척 상황" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="140"/>
+        <StackPanel Grid.Row="1" >
+            <TextBlock Text="프로젝트 총 메인 업무 상황 차트" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Grid>
+                <ProgressBar x:Name="Progress_Main" Height="20" Minimum="0" Maximum="{Binding ProjectWork, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                             Value="{Binding ProjectNowSuccess, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                <TextBlock Text="{Binding ProjectPersent, StringFormat={}{0:0.0}%}"
+                 VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Grid>
+        </StackPanel>
+        <StackPanel Grid.Row="2" >
+            <TextBlock Text="개인별 업무 차트" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            <Grid>
+                <ProgressBar x:Name="Progress_Personal" Height="20" Minimum="0" Maximum="{Binding PersonalWork}" Value="{Binding PersonalNowSuccess}"/>
+                <TextBlock Text="{Binding PersonalPersent, StringFormat={}{0:0.0}%}"
+                 VerticalAlignment="Center" HorizontalAlignment="Center" />
+            </Grid>
+        </StackPanel>
+    </Grid>
+</UserControl>
