@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KKOK.Models.WorkModel
+namespace KKOK.ViewModels.WorkViewModels
 {
-    public class WorkListModel
+    public class WorkListItemViewModel
     {
         public int No { get; set; }
         public string WorkTitle { get; set; }
@@ -18,9 +18,9 @@ namespace KKOK.Models.WorkModel
         public string Comment { get; set; }
         public string SecheduleData { get; set; }
 
-        public static WorkListModel From(WorkListData data)
+        public static WorkListItemViewModel From(WorkListData data)
         {
-            return new WorkListModel()
+            return new WorkListItemViewModel()
             {
                 No = data.No,
                 WorkTitle = data.WorkTitle,
@@ -28,7 +28,7 @@ namespace KKOK.Models.WorkModel
                 State = data.State,
             };
         }
-    } 
+    }
 
     public class WorkListData
     {
@@ -45,7 +45,7 @@ namespace KKOK.Models.WorkModel
         public string Manager { get; }
         public string State { get; }
 
-        public static WorkListData From((int No, string WorkTitle, string Manager, string State)data)
+        public static WorkListData From((int No, string WorkTitle, string Manager, string State) data)
         {
             return new WorkListData(
                 data.No,

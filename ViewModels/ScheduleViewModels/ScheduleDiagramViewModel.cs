@@ -1,12 +1,14 @@
-﻿using System;
+﻿using KKOK.ViewModels.Main;
+using KKOK.ViewModels.ViewModel.ScheduleViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
+namespace KKOK.ViewModels
 {
-    class ScheduleDiagramViewModel
+    class ScheduleDiagramViewModel : ViewModelBase
     {
 
         #region Property

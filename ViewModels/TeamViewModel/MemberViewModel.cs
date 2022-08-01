@@ -1,5 +1,5 @@
-﻿using KKOK.Models.WorkModel;
-using KKOK.ViewModels.Main;
+﻿using KKOK.ViewModels.Main;
+using KKOK.ViewModels.WorkViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;

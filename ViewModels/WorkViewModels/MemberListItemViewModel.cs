@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace KKOK.Models.WorkModel
+namespace KKOK.ViewModels.WorkViewModels
 {
     public class MemberListItemViewModel
     {

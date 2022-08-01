@@ -6,11 +6,15 @@
              xmlns:local="clr-namespace:KKOK.Views.MainViews"
              xmlns:vm="clr-namespace:KKOK.ViewModels"
              xmlns:vw="clr-namespace:KKOK.Views.WorkView"
+             xmlns:vw2="clr-namespace:KKOK.Views.ScheduleViews"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <DataTemplate DataType="{x:Type vm:DetailWorkViewModel}">
             <vw:DetailWorkView/>
+        </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:ScheduleDiagramDetailViewModel}">
+            <vw2:ScheduleDiagramDetailView/>
         </DataTemplate>
     </UserControl.Resources>
     <Grid>

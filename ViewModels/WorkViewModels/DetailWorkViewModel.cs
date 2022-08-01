@@ -1,5 +1,4 @@
 ﻿using GalaSoft.MvvmLight.Command;
-using KKOK.Models.WorkModel;
 using KKOK.ViewModels.Main;
 using KKOK.ViewModels.WorkViewModels;
 using KKOK.Views.WorkView;

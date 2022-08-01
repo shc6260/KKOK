@@ -22,12 +22,12 @@
         </Grid.ColumnDefinitions>
         <views:MainListView Width="125" DataContext="{Binding MainListViewModel}" 
                             Visibility="{Binding ElementName=ListExpander, Path=IsExpanded, Converter={StaticResource FalseToCollapsed}}"/>
-        <Expander Grid.Column="1" Style="{StaticResource ExpanderStyle}"
-                  x:Name="ListExpander" />
+        
         <views:MainLeftView Background="White" Margin="3,5,0,5" BorderBrush="Black"
                             BorderThickness="1" Grid.Column="2" 
                             DataContext="{Binding MainLeftViewModel}"/>
-        
+        <Expander  IsExpanded="True" Grid.Column="2" Style="{StaticResource ExpanderStyle}"
+                  x:Name="ListExpander" />
         <GridSplitter Grid.Column="3"
                       VerticalAlignment="Stretch"
                       HorizontalAlignment="Center"

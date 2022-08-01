@@ -1,5 +1,7 @@
 ﻿using GalaSoft.MvvmLight.Command;
 using KKOK.Models.ScheduleModel;
+using KKOK.ViewModels.Main;
+using KKOK.ViewModels.ViewModel.ScheduleViewModels;
 using KKOK.Views.ScheduleViews;
 using Prism.Commands;
 using System;
@@ -10,9 +12,9 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 
-namespace KKOK.ViewModels.ViewModel.ScheduleViewModels
+namespace KKOK.ViewModels
 {
-    class ScheduleDiagramDetailViewModel
+    class ScheduleDiagramDetailViewModel : ViewModelBase
     {
         #region Constructs
         public ScheduleDiagramDetailViewModel()

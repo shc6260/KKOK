@@ -80,9 +80,10 @@ namespace KKOK.ViewModels.MainViewModels
                 /*case FunctionsType.Home:
                     MainLeftViewModel.LeftContent = new HomeViewModel();
                     break;*/
-                /*case FunctionsType.Chart:
-                    MainLeftViewModel.LeftContent = new ChartViewModel();
-                    break;*/
+                case FunctionsType.Chart:
+                    MainLeftViewModel.LeftContent = new ScheduleDiagramViewModel();
+                    MainRightViewModel.RightContent = new ScheduleDiagramDetailViewModel();
+                    break;
                 case FunctionsType.Work:
                     MainLeftViewModel.LeftContent = new WorkListViewModel();
                     MainRightViewModel.RightContent = new DetailWorkViewModel();

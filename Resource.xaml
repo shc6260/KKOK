@@ -29,13 +29,12 @@
     </Style>
     <!--#endregion-->
 
-    <!--#region ButtonStyle -->
+    <!--#region MianListButtonStyle -->
     <Style x:Key="ButtonStyle2" TargetType="Button">
         <Setter Property="Background" Value="White"/>
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="FontFamily" Value="Yu Gothic UI Semilight"/>
         <Setter Property="FontSize" Value="15"/>
-        <Setter Property="Margin" Value="0,5,0,5"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Button">
@@ -120,43 +119,31 @@
     </Style>
     <!--#endregion-->
 
+    <!--#region ExpanderStyle -->
     <Style TargetType="Expander" x:Key="ExpanderStyle">
-        <Setter Property="Background" Value="Black"/>
+        <Setter Property="Background" Value="SkyBlue"/>
         <Setter Property="Foreground" Value="Black"/>
         <Setter Property="ExpandDirection" Value="Right"/>
         <Setter Property="VerticalAlignment" Value="Top"/>
         <Setter Property="HorizontalAlignment" Value="Left"/>
-        <Setter Property="Margin" Value="0,3,0,0"/>
         <Setter Property="Width" Value="25"/>
         <Setter Property="Height" Value="70"/>
-        <Setter Property="Template">
+        <Setter Property="Margin" Value="0,4,0,0"/>
+        <Setter Property="ToolTip" Value="Menu OPen"/>
+        <Setter Property="Header">
             <Setter.Value>
-                <ControlTemplate TargetType="Expander" x:Name="exp">
-                    <Grid>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="20" />
-                            </Grid.ColumnDefinitions>
-                            <ToggleButton x:Name="tb"  FontSize="9.75" Background="SkyBlue" Foreground="Black" Grid.Column="1"  IsChecked="{Binding Path=IsExpanded,Mode=TwoWay,RelativeSource={RelativeSource TemplatedParent}}" >
-                                <ToggleButton.Content>
-                                    <TextBlock Text="Menu">
-                                        <TextBlock.LayoutTransform>
-                                            <RotateTransform Angle="90"/>
-                                        </TextBlock.LayoutTransform>
-                                        <TextBlock.RenderTransform>
-                                            <TranslateTransform X="0.5" Y="0.5"/>
-                                        </TextBlock.RenderTransform>
-                                    </TextBlock>
-                                </ToggleButton.Content>
-                            </ToggleButton>
-                            <ContentPresenter x:Name="HeaderContent" Grid.Column="0" Margin="4" ContentSource="Header" RecognizesAccessKey="True" />
-                        </Grid>
-                    </Grid>
-                </ControlTemplate>
+                <TextBlock Text="Menu">
+                    <TextBlock.LayoutTransform>
+                        <RotateTransform Angle="90"/>
+                    </TextBlock.LayoutTransform>
+                    <TextBlock.RenderTransform>
+                        <TranslateTransform X="0.5" Y="0.5"/>
+                    </TextBlock.RenderTransform>
+                </TextBlock>
             </Setter.Value>
         </Setter>
     </Style>
+    <!--#endregion-->
 
     <!--#region MainListDataGridStyle -->
     <Style x:Key="MainListStyle" TargetType="DataGrid">
