@@ -12,7 +12,12 @@
         <vm:MemberViewModel/>
     </UserControl.DataContext>
     <Grid>
-        <DataGrid Style="{StaticResource DataGridBaseStyle}" ItemsSource="{Binding Members}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.15*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Label  Content="멤버" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        <DataGrid Grid.Row="1" Style="{StaticResource DataGridBaseStyle}" ItemsSource="{Binding Members}">
             <DataGrid.Columns >
                 <DataGridTextColumn
                     Binding="{Binding Name}"

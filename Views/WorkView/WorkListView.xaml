@@ -13,13 +13,15 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
+            <RowDefinition Height="0.05*"/>
             <RowDefinition/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
+        <Label Content="업무" FontSize="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
         <TextBox Width="100" HorizontalAlignment="Right" Text="{Binding NameToFillter,UpdateSourceTrigger=PropertyChanged}" 
                  Style="{StaticResource WaterMarkTextBox}" Tag="{StaticResource NameFilterString}" />
         <DataGrid SelectedItem="{Binding SelectedItem}" ItemsSource="{Binding WorkListCollection}"
-                  Style="{StaticResource DataGridBaseStyle}" Grid.Row="1">
+                  Style="{StaticResource DataGridBaseStyle}" Grid.Row="2">
             <DataGrid.Columns>
                 <DataGridTextColumn Width="Auto" CanUserResize="False"
                                     HeaderStyle="{StaticResource DataGridHeaderStyle2}"
@@ -52,6 +54,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button  Content="{StaticResource AddString}" Command="{Binding ButtonAddPopup}" Grid.Row="2" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Right"/>
+        <Button  Content="{StaticResource AddString}" Command="{Binding ButtonAddPopup}" Grid.Row="3" Style="{StaticResource ButtonStyle1}" HorizontalAlignment="Right"/>
     </Grid>
 </UserControl>

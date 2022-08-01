@@ -15,11 +15,11 @@
             <RowDefinition Height="13*"/>
         </Grid.RowDefinitions>
         <Label FontSize="15" Content="공지 내용 리스트" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="126"/>
-        <DataGrid Grid.Row="1" ItemsSource="{Binding Notice}" AutoGenerateColumns="False" Margin="5" >
+        <DataGrid Grid.Row="1" ItemsSource="{Binding Notice}" Style="{StaticResource DataGridBaseStyle}" >
             <DataGrid.Columns>
-                <DataGridTextColumn Header="날짜" Binding="{Binding Date, StringFormat='yyyy/MM/dd'}"/>
-                <DataGridTextColumn Header="공지내용" Binding="{Binding NoticeContent}"/>
-                <DataGridTextColumn Header="작성자" Binding="{Binding Writer}"/>
+                <DataGridTextColumn Width="auto" HeaderStyle="{StaticResource DataGridHeaderStyle2}" ElementStyle="{StaticResource WorkListItemStyle}" Header="날짜" Binding="{Binding Date, StringFormat='yyyy/MM/dd'}"/>
+                <DataGridTextColumn Width="3*" HeaderStyle="{StaticResource DataGridHeaderStyle2}" ElementStyle="{StaticResource WorkListItemStyle}" Header="공지내용" Binding="{Binding NoticeContent}"/>
+                <DataGridTextColumn Width="auto" HeaderStyle="{StaticResource DataGridHeaderStyle2}" ElementStyle="{StaticResource WorkListItemStyle}" Header="작성자" Binding="{Binding Writer}"/>
             </DataGrid.Columns>
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
