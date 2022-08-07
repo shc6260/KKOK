@@ -22,7 +22,8 @@
                 <ColumnDefinition Width="49*"/>
             </Grid.ColumnDefinitions>
             <TextBlock Grid.Row="0" Grid.Column="0" Text="이름 필터 :" HorizontalAlignment="Right" Width="60"/>
-            <TextBox Grid.Row="0" Grid.Column="1" BorderThickness="0" Text="{Binding Items.NameFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Right" Width="95" />
+            <TextBox Grid.Row="0" Grid.Column="1" BorderThickness="0" Text="{Binding Items.NameFilter,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                     Style="{StaticResource WaterMarkTextBox}" Tag="이름입력" />
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>

@@ -14,6 +14,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -52,5 +53,16 @@
             </Grid>
         </Grid>
         <TextBox Style="{StaticResource DetailWorkTextBoxStyle}" Grid.Row="1" Text="{StaticResource CommentString}" />
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+        <Border Margin="10" Grid.Column="0" CornerRadius="5" BorderThickness="0.7" BorderBrush="Black">
+                <TextBox Text="{Binding InputComment, UpdateSourceTrigger=PropertyChanged, Mode=OneWayToSource}" TextWrapping="Wrap" AcceptsReturn="True" BorderThickness="0"
+                         Style="{StaticResource WaterMarkTextBox}"  Tag="코멘트를 입력하세요."  />
+        </Border>
+            <Button Command="{Binding ButtonCommentSave}" Content="등록" Grid.Column="1" Style="{StaticResource ButtonStyle1}"/>
+        </Grid>
     </Grid>
 </UserControl>

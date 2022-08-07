@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KKOK.ViewModels.ViewModel.ScheduleViewModels"
-        mc:Ignorable="d" >
+        mc:Ignorable="d" d:Height="600" d:Width="1000">
     <UserControl.DataContext>
         <local:NoticeListViewModel/>
     </UserControl.DataContext>
@@ -17,9 +17,9 @@
         <Label FontSize="15" Content="공지 내용 리스트" HorizontalAlignment="Center" VerticalAlignment="Center" Height="30" Width="126"/>
         <DataGrid Grid.Row="1" ItemsSource="{Binding Notice}" Style="{StaticResource DataGridBaseStyle}" >
             <DataGrid.Columns>
-                <DataGridTextColumn Width="auto" HeaderStyle="{StaticResource DataGridHeaderStyle2}" ElementStyle="{StaticResource WorkListItemStyle}" Header="날짜" Binding="{Binding Date, StringFormat='yyyy/MM/dd'}"/>
-                <DataGridTextColumn Width="3*" HeaderStyle="{StaticResource DataGridHeaderStyle2}" ElementStyle="{StaticResource WorkListItemStyle}" Header="공지내용" Binding="{Binding NoticeContent}"/>
-                <DataGridTextColumn Width="auto" HeaderStyle="{StaticResource DataGridHeaderStyle2}" ElementStyle="{StaticResource WorkListItemStyle}" Header="작성자" Binding="{Binding Writer}"/>
+                <DataGridTextColumn Width="Auto" HeaderStyle="{StaticResource DataGridHeaderStyle2}" ElementStyle="{StaticResource WorkListItemStyle}" Header="날짜" Binding="{Binding Date, StringFormat='yyyy/MM/dd'}"/>
+                <DataGridTextColumn Width="2*" HeaderStyle="{StaticResource DataGridHeaderStyle2}" ElementStyle="{StaticResource WorkListItemStyle}" Header="공지내용" Binding="{Binding NoticeContent}"/>
+                <DataGridTextColumn Width="Auto" HeaderStyle="{StaticResource DataGridHeaderStyle2}" ElementStyle="{StaticResource WorkListItemStyle}" Header="작성자" Binding="{Binding Writer}"/>
             </DataGrid.Columns>
             <DataGrid.RowDetailsTemplate>
                 <DataTemplate>
@@ -27,6 +27,6 @@
                 </DataTemplate>
             </DataGrid.RowDetailsTemplate>
         </DataGrid>
-        <Button Grid.Row="2" Width="100" Content="공지 작성하기" HorizontalAlignment="Right" Margin="0,0,5,0" Command="{Binding NoticeAddViewButtonClick}"/>
+        <Button Grid.Row="2" Content="공지 작성하기" HorizontalAlignment="Right" Style="{StaticResource ButtonStyle1}" Command="{Binding NoticeAddViewButtonClick}"/>
     </Grid>
 </UserControl>

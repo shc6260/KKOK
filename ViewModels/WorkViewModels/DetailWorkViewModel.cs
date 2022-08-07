@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace KKOK.ViewModels
@@ -62,12 +63,28 @@ namespace KKOK.ViewModels
             set => SetProperty(ref workType, value);
         }
 
+        private string inputComment;
+
+        public string InputComment
+        {
+            get => inputComment;
+            set => SetProperty(ref inputComment, value);
+        }
         #endregion
 
         #region DelegateCommand
         Popup popup = new Popup();
         private DelegateCommand buttonStatePopup;
-        public DelegateCommand ButtonStatePopup => buttonStatePopup = buttonStatePopup ?? new DelegateCommand(popup.ButtonStateShow); 
+        public ICommand ButtonStatePopup => buttonStatePopup = buttonStatePopup ?? new DelegateCommand(popup.ButtonStateShow);
+        private DelegateCommand buttonCommentSave { get; set; }
+        public ICommand ButtonCommentSave => buttonCommentSave = buttonCommentSave ?? new DelegateCommand(ButtonSaveCommand);
+
+
+        private void ButtonSaveCommand()
+        {
+            MessageBox.Show("입력한 코멘트 : " + InputComment);
+        }
+
         #endregion
     }
 }
